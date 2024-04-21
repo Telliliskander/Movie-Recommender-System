@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Movie Recommendation System</title>
+</head>
+<body>
+  <center><h1>Skander and Hamza's Movie Recommendation System</h1>
+
+  </form method="POST" action="/recommendations">
+    <label for="movie">Enter a movie name:</label><br>
+    <input type="text" id="movie" name="movie" required>
+    <br>
+    <label for="rating">Enter your rating (0.5-5):</label><br>
+    <input type="number" id="rating" name="rating" min="0.5" max="5" step="0.5" required>
+    <br><br>
+    <input type="button" value="Add another movie" onclick="addMovieInput()">
+    <input type="submit" value="Recommend">
+  </form></center>
+  <script>
+    function addMovieInput() {
+      var moviesDiv = document.getElementById("moviesDiv");
+      var movieInput = document.createElement("input");
+      var ratingInput = document.createElement("input");
+      
+      movieInput.type = "text";
+      movieInput.name = "movie";
+      movieInput.required = true;
+      movieInput.placeholder = "Enter a movie name";
+      
+      ratingInput.type = "number";
+      ratingInput.name = "rating";
+      ratingInput.min = "0.5";
+      ratingInput.max = "5";
+      ratingInput.step = "0.5";
+      ratingInput.required = true;
+      ratingInput.placeholder = "Enter your rating (0.5-5)";
+      
+      moviesDiv.appendChild(movieInput);
+      moviesDiv.appendChild(ratingInput);
+      moviesDiv.appendChild(document.createElement("br"));
+    }
+  </script>
+  
+  {% if recommendations %}
+  <h2>Recommended Movies:</h2>
+  <ul>
+    {% for movie, image_url in recommendations.items() %}
+    <li>
+      <img src="{{ image_url }}" alt="{{ movie }}">
+      <p>{{ movie }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</body>
+</html>
+
+
+
+
+
+
+<center><h1>Skander and Hamza's Movie Recommendation System</h1>
+
+</form method="POST" >
+  <label for="movie">Enter a movie name:</label><br>
+  <input type="text" id="movie" name="movie" required>
+  <br>
+  <label for="rating">Enter your rating (0.5-5):</label><br>
+  <input type="number" id="rating" name="rating" min="0.5" max="5" step="0.5" required>
+  <br><br>
+  <input type="submit" value="Recommend">
+</form></center>

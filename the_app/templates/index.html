@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rate Movies</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Skander Movie Ratings System</h1>
+
+    <form method="POST" action="/rate_movies"> <!-- Add the form element with the method and action attributes -->
+        <div class="movie-container">
+            <div class="movie">
+                <img src="{{ url_for('static', filename='Dumb & Dumber (Dumb and Dumber) (1994).jpg') }}" alt="Movie 1 Poster">
+                <label for="rating1">Dumb & Dumber (1994):</label>
+                <input type="number" name="rating1" id="rating1" min="0" max="5" step="0.1" required>
+            </div>
+            <div class="movie">
+                <img src="{{ url_for('static', filename='Home Alone (1990).jpg') }}" alt="Movie 2 Poster">
+                <label for="rating2">Home Alone:</label>
+                <input type="number" name="rating2" id="rating2" min="0" max="5" step="0.1" required>
+            </div>
+            <div class="movie">
+                <img src="{{ url_for('static', filename='Titanic (1997).jpg') }}" alt="Movie 3 Poster">
+                <label for="rating3">Titanic (1997):</label>
+                <input type="number" name="rating3" id="rating3" min="0" max="5" step="0.1" required>
+            </div>
+            <div class="movie">
+                <img src="{{ url_for('static', filename='Call Me by Your Name (2017).jpg') }}" alt="Movie 4 Poster">
+                <label for="rating4">Call Me By Your Name (2017):</label>
+                <input type="number" name="rating4" id="rating4" min="0" max="5" step="0.1" required>
+            </div>
+            <div class="movie">
+                <img src="{{ url_for('static', filename='Hangover, The (2009).jpg') }}" alt="Movie 5 Poster">
+                <label for="rating5">The Hangover (2009):</label>
+                <input type="number" name="rating5" id="rating5" min="0" max="5" step="0.1" required>
+            </div>
+        </div>
+
+        <button type="submit" class="mt-10">Predict</button> <!-- Place the submit button inside the form -->
+    </form>
+
+    
+</body>
+</html>

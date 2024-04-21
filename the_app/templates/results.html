@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Ratings</title>
+</head>
+<body>
+    <h1>Skander Movie Ratings System</h1>
+    <ul>
+        {% for movie_name, rating in disp.items() %}
+            <li>
+                <h3>{{ movie_name }}</h3>
+                <img src="{{ url_for('static', filename=movies[movie_name]) }}" alt="{{ movie_name }}" width="200" height="300">
+                <p>Rating: {{ rating }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

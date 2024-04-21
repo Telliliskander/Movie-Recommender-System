@@ -1,0 +1,61 @@
+.movie-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.movie {
+    width: 25%;
+    margin: 0 10px;
+}
+
+/* .movie img {
+    width: 100%;
+} */
+
+
+
+
+.movie-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns as needed */
+    gap: 20px; /* Adjust the gap between movies */
+}
+
+.movie {
+    text-align: center;
+}
+
+.movie img {
+    max-width: 300%;
+    height: auto;
+    /* width: 200px; /* You can adjust the width to your preference */
+}
+
+.movie label {
+    display: block;
+}
+
+.movie input {
+    width: 100px; /* Adjust the input width as needed */
+    margin: 0 auto; /* Center the input */
+}
+
+
+button {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+  }
+
+  body {
+    background-image: url("{{ url_for('static', filename='background.avif') }}");
+}
+
+h1 {
+  text-align: center;
+}
+
+button[type="submit"] {
+    margin-top: 20px; /* Adjust the value to move the button down as needed */
+}
